@@ -17,6 +17,7 @@
         .senderText {
             background-color: #8D775F;
             color: white;
+            font-size: 14px;
             border-radius: 20px;
         }
 
@@ -36,6 +37,7 @@
 
             color: black;
 
+            font-size: 14px;
             border-radius: 20px;
         }
 
@@ -58,7 +60,46 @@
                 </p>
             </div>
             <div class="card-body p-2">
-                <div class="overflow-auto" id="chatbox" style="height:320px;width:100%">
+                <div id="chatbox" style="height:320px;width:100%;overflow-y:auto">
+                    <div class="row answerContainer">
+                        <div class="col-6 answerText ms-4">
+                            <div>
+                                <p>AkaBot</p>
+                                <p>Selamat datang di Chatbot Layanan Akademik, disini kamu dapat bertanya informasi seputar:
+                                </p>
+                                <ol>
+                                    <li>Jadwal Mata Kuliah dan Ruang Kelas</li>
+                                    <li>Ruangan dan Jadwal Ujian Semester</li>
+                                    <li>Cetak Kartu Ujian</li>
+                                    <li>Kuliah Hybrid</li>
+                                    <li>Nilai Akademik</li>
+                                    <li>Masa Registrasi</li>
+                                    <li>Pengajuan Cuti Kuliah</li>
+                                    <li>SKS Mata Kuliah</li>
+                                    <li>Beasiswa</li>
+                                    <li>Kalender Akademik</li>
+                                    <li>TAK</li>
+                                    <li>Tes Bahasa</li>
+                                    <li>Score Tes Bahasa</li>
+                                    <li>Input Nilai Tes Bahasa dari Instansi Luar</li>
+                                    <li>Program Studi</li>
+                                    <li>Biaya Pendidikan</li>
+                                    <li>Kelas Internasional</li>
+                                    <li>Pendaftaran Mahasiswa</li>
+                                    <li>Seleksi Mahasiswa</li>
+                                    <li>Asrama Telkom</li>
+                                    <li>Virtual Tour</li>
+                                    <li>Dosen</li>
+                                    <li>Ujian Susulan</li>
+                                    <li>Kerja Praktek</li>
+                                    <li>Kelengkapan Tugas Akhir</li>
+                                    <li>Sidang Akhir</li>
+                                    <li>SK TA/PA</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="col-6"></div>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">
@@ -94,7 +135,7 @@
             <div class="col-6"></div>
             <div class="col-6 d-flex justify-content-between senderText">
                 <div>
-                    <p>Sender</p>
+                    <p>Guest</p>
                     <p>${questionBox.value}</p>
                 </div>
             </div>
@@ -115,13 +156,14 @@
             <div class="row answerContainer">
                 <div class="col-6 answerText ms-4">
                     <div>
-                        <p>Jawaban</p>
+                        <p>AkaBot</p>
                         <p>${jsonRes.answer}</p>
                     </div>
                 </div>
                 <div class="col-6"></div>
             </div>`;
             questionBox.value = "";
+            chatBox.lastChild.scrollIntoView(false)
         }
         sendBtn.addEventListener("click", () => {
             sendMessage();
